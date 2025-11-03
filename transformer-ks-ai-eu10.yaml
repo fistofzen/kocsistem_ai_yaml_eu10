@@ -30,7 +30,7 @@ spec:
         autoscaling.knative.dev/targetBurstCapacity: 0
         autoscaling.knative.dev/scaleToZeroPodRetentionPeriod: "10m"
       labels: |
-        ai.sap.com/resourcePlan: "{{inputs.parameters.resourcePlan}}"
+        ai.sap.com/instanceType: "{{inputs.parameters.instanceType}}"
     spec: |
       predictor:
         imagePullSecrets:
