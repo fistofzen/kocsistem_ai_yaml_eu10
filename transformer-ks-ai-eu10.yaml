@@ -9,7 +9,7 @@ metadata:
     executables.ai.sap.com/name: "transformer"
   labels:
     scenarios.ai.sap.com/id: "transformer"
-    ai.sap.com/version: "0.0.3"
+    ai.sap.com/version: "0.0.1"
 spec:
   inputs:
     parameters:
@@ -39,18 +39,15 @@ spec:
         maxReplicas: 1
         containers:
         - name: kserve-container
-          image: docker.io/hdemirkale/ks-ai-transformer-v4:ai-core-v1-v2 
+          image: docker.io/hdemirkale/ks-ai-transformer-v2:ai-core-v1-v2 
           ports:
             - containerPort: 8080
-              protocol: TCP
-            - containerPort: 8888
               protocol: TCP
           command: ["/bin/sh", "-c"]
           args:
             - >
               set -e && echo "-------------Starting transformer Server--------------" 
-              && uvicorn app:app --host 0.0.0.0 --port 8080 & \
-              && jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root &
+              && uvicorn app:app --host 0.0.0.0 --port 8080
           env:
             - name: MODEL_NAME
               value: "{{inputs.parameters.modelName}}"
