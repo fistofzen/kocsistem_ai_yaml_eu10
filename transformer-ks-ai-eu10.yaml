@@ -9,7 +9,7 @@ metadata:
     executables.ai.sap.com/name: "transformer"
   labels:
     scenarios.ai.sap.com/id: "transformer"
-    ai.sap.com/version: "0.0.5"
+    ai.sap.com/version: "0.0.6"
 spec:
   inputs:
     parameters:
@@ -39,7 +39,7 @@ spec:
         maxReplicas: 1
         containers:
         - name: kserve-container
-          image: docker.io/hdemirkale/ks-ai-transformer-v2:ai-core-v1-v2 
+          image: docker.io/hdemirkale/ks-ai-transformer-v4:ai-core-v1-v2 
           ports:
             - containerPort: 8080
               protocol: TCP
