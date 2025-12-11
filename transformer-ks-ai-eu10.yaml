@@ -9,7 +9,7 @@ metadata:
     executables.ai.sap.com/name: "transformer"
   labels:
     scenarios.ai.sap.com/id: "transformer"
-    ai.sap.com/version: "0.0.6"
+    ai.sap.com/version: "0.0.7"
 spec:
   inputs:
     parameters:
@@ -19,7 +19,7 @@ spec:
         description: "Model Name to be used in SAP Generative AI Hub SDK. Ensure an identical value as alias parameter."
       - name: instanceType
         type: "string"
-        default: "g6e.4xlarge"
+        default: "g6.4xlarge"
         description: "Resource Plan of SAP AI Core. Supported: infer.s, infer.m, infer.l, train.l."
   template:
     apiVersion: "serving.kserve.io/v1beta1"
